@@ -35,8 +35,43 @@ function findAll(repository, filter, sort, skip, pageSize) {
         .toArray();
 }
 
+function countDocuments(respository, filter) {
+    return repository.countDocuments(filter);
+}
+
+function deleteOne(repository, filter) {
+    return repository.deleteOne(filter);
+}
+
+function updateOne(repository, filter, updateData, use) {
+    const updateEntity = decorateUpdateEntity(updateData, user);
+
+    return repository.updateOne(
+        filter,
+        { $set: updateEntity }
+    );
+}
+
+function updateMany(repository, filter, update, user) {
+    const updateEntity = decorateUpdateEntity(update, user);
+
+    return repository.updateMany(
+        filter,
+        { $set: updateEntity }
+    );
+}
+
+function aggregate(repository, filter, sort, group) {
+    return repository.aggregate([{$match: filter}, {$sort: sort}, {$group: group}]).toArray();
+}
+
 module.exports = {
     insertOne,
     findOne,
     findAll,
+    deleteOne,
+    updateOne,
+    updateMany,
+    countDocuments,
+    aggregate
 }
