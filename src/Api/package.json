@@ -1,0 +1,34 @@
+{
+    "name": "e-commerce-api-gateway",
+    "version": "1.0.0",
+    "description": "",
+    "private": true,
+    "scripts": {
+        "start": "node program.js",
+        "dev": "nodemon NODE_ENV=development program.js"
+    },
+    "author": {
+        "name": "Jason"
+    },
+    "dependencies": {
+        "awilix": "3.0.7",
+        "awilix-express": "1.0.0",
+        "axios": "^0.21.1",
+        "body-parser": "^1.19.0",
+        "debug": "3.1.0",
+        "express": "4.16.3",
+        "express-async-errors": "3.1.1",
+        "express-validator": "^6.6.1",
+        "google-auth-library": "^6.1.3",
+        "helmet": "^3.23.3",
+        "moment": "2.24.0",
+        "mongodb": "3.3.2",
+        "morgan": "^1.10.0",
+        "multer": "1.3.0",
+        "node-cache": "5.1.2",
+        "nodemon": "2.0.6",
+        "pg": "7.4.3",
+        "redis": "3.0.2",
+        "uuid": "8.3.1"
+    }
+}
