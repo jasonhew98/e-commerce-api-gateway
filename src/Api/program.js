@@ -4,7 +4,7 @@ const https = require('https');
 async function main() {
     try{
         const { app, config } = await require("./startup.js")(require("./appsettings.js"));
-        const port = 5001;
+        const port = config.port;
         https.createServer(app)
         .listen(port,
             () => {

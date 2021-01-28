@@ -24,16 +24,16 @@ module.exports = async (config) => {
     app.use(bodyParser.json({ limit: '20mb' }));
     app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
 
-    // const container = await require('./infrastructure/container')(config);
+    const container = await require('./infrastructure/container')(config);
 
-    // app.use(scopePerRequest(container));
+    app.use(scopePerRequest(container));
     app.use(loadControllers('./features/*/*Controller.js'));
     
     // app.use(require("./infrastructure/middlewares/loggingMiddleware"));
     // app.use(require("./infrastructure/middlewares/currentUserInjectorMiddleware"));
     // app.use(require("./infrastructure/middlewares/accessTokenAuthMiddleware"));
     // app.use(require("./infrastructure/middlewares/authorizationBasicTokenMiddleware"));
-    // app.use(require("./infrastructure/middlewares/errorHandlerMiddleware"));
+    app.use(require("./infrastructure/middlewares/errorHandlerMiddleware"));
 
     app.get("/", (req, res) => res.sendFile("index.html", { root: __dirname }));
 

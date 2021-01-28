@@ -14,6 +14,10 @@ const config = {
         uri: env.MONGODB_URL || "",
         database: env.DATABASE || "",
         auditCollectionName: env.AUDIT_COLLECTION_NAME || "Audit",
+        productCollectionName: env.PRODUCT_COLLECTION_NAME || "Product"
+    },
+    logging: {
+        globalThreshold: ""
     }
 }
 

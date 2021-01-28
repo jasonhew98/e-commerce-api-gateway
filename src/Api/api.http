@@ -1,0 +1,5 @@
+@webApiUrl=http://localhost:1810
+
+## Product
+### GET All Products
+GET {{webApiUrl}}/api/product?
