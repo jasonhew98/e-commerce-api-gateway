@@ -2,4 +2,4 @@
 
 ## Product
 ### GET All Products
-GET {{webApiUrl}}/api/product?
+GET {{webApiUrl}}/api/product

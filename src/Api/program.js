@@ -1,11 +1,11 @@
 const debug = require('debug');
-const https = require('https');
+const http = require('http');
 
 async function main() {
     try{
         const { app, config } = await require("./startup.js")(require("./appsettings.js"));
         const port = config.port;
-        https.createServer(app)
+        http.createServer(app)
         .listen(port,
             () => {
                 console.log(`Listening port: ${port}`);

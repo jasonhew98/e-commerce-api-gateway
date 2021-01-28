@@ -16,8 +16,8 @@ const productController = ({
                     pageSize: (+pageSize),
                     currentPage: (+currentPage)
                 })
-
-                const resultDto = result.map(e => assignProductDto({}. e));
+                
+                const resultDto = result.map(e => assignProductDto({}, e));
 
                 if (success)
                     return res.status(200).send(resultDto);
